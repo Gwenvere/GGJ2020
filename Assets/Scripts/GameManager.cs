@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     public Canvas canvas;
     public Canvas cameraCanvas;
+    public Canvas instructions;
+
     float timer;
     public Text timerText;
     bool timerCounting;
@@ -17,6 +19,8 @@ public class GameManager : MonoBehaviour
     float audio1Volume = 1.0f;
     public AudioSource gameOver;
     public AudioSource music;
+    public AudioSource buttonSound;
+
     bool fade;
 
     public GameObject rCubes;
@@ -55,6 +59,8 @@ public class GameManager : MonoBehaviour
         rCubes.GetComponent<RandomCubes>().enabled = false;
         cameraCanvas.gameObject.SetActive(false);
         canvas.gameObject.SetActive(false);
+        instructions.gameObject.SetActive(false);
+
         timer = 0;
         timerCounting = false;
         highscore = 0;
@@ -98,7 +104,7 @@ public class GameManager : MonoBehaviour
             {
                 GetComponent<BirdSpawner>().enabled = true;
             } 
-            if (OVRInput.Get(OVRInput.Button.PrimaryThumbstick))
+            if (OVRInput.GetDown(OVRInput.RawButton.X))
             {
                 respawnBucket();
             }  
@@ -310,11 +316,13 @@ public class GameManager : MonoBehaviour
 
     public void menuBtn()
     {
+        buttonSound.Play();
         reloadLevel();
     }
 
     public void playBtn()
     {
+        buttonSound.Play();
         introObj.SetActive(false);
         introPlaying = false;
         this.GetComponent<CrabSpawner>().enabled = true;
@@ -324,6 +332,7 @@ public class GameManager : MonoBehaviour
     }
     public void replayBtn()
     {
+        buttonSound.Play();
         reloadLevel();
         /*
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -339,7 +348,20 @@ public class GameManager : MonoBehaviour
     }
     public void settingsBtn()
     {
+        buttonSound.Play();
+        if (instructions.gameObject.activeSelf) instructions.gameObject.SetActive(false);
+        else
+        {
+            instructions.gameObject.SetActive(true);
+            canvas.gameObject.SetActive(false);
+        }
+    }
 
+    public void closeInst()
+    {
+        buttonSound.Play();
+        instructions.gameObject.SetActive(false);
+        uiHelper.SetActive(false);
     }
 }
 
