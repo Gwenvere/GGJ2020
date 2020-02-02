@@ -152,6 +152,11 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameOver.Play();
+        //Open menu
+        uiHelper.SetActive(true);
+        canvas.gameObject.SetActive(true);
+        inMenu = !inMenu;
+
         fade = true;
         timerCounting = false;
         rCubes.GetComponent<RandomCubes>().enabled = false;
@@ -232,12 +237,11 @@ public class GameManager : MonoBehaviour
 
             }
         }
-        if (secondNb != 0)
-        {
+
             switch (secondNb)
             {
                 case 0:
-                    secondGame = Instantiate(n0, secondNumberObj.transform);
+                    if(firstNb != 0) secondGame = Instantiate(n0, secondNumberObj.transform);
                     break;
                 case 1:
                     secondGame = Instantiate(n1, secondNumberObj.transform);
@@ -270,7 +274,7 @@ public class GameManager : MonoBehaviour
                     break;
 
             }
-        }
+        
         switch (thirdNb)
         {
             case 0:
