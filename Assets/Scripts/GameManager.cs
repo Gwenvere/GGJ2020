@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject firstNumberObj;
     public GameObject secondNumberObj;
+    public GameObject thirdNumberObj;
 
     public GameObject n0;
     public GameObject n1;
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
 
     GameObject secondGame;
     GameObject firstGame;
+    GameObject thirdGame;
 
     public GameObject bucket;
     public GameObject introObj;
@@ -82,11 +84,10 @@ public class GameManager : MonoBehaviour
             timer += Time.deltaTime;
             timerText.gameObject.GetComponent<Text>().text = "You've lasted " + Mathf.Round(timer).ToString() + " seconds.";
 
-            float firstNb = Mathf.Floor(timer / 10f);
-            float secondNb = Mathf.Round(timer % 10f);
-            setScore(firstNb, secondNb);
+
+            setScore(timer);
             
-            if (timer > 30f)
+            if (timer > 35f)
             {
                 GetComponent<BirdSpawner>().enabled = true;
             } 
@@ -151,90 +152,140 @@ public class GameManager : MonoBehaviour
     {
         if (audio1Volume > 0.1)
         {
-            audio1Volume -= 0.1f * Time.deltaTime;
+            audio1Volume -= 0.5f * Time.deltaTime;
             audio.volume = audio1Volume;
         }
     }
 
-    void setScore(float firstNbS, float secondNbS)
+    void setScore(float score)
     {
+        float firstNb = Mathf.Floor(timer / 100);
+        float secondNb = Mathf.Floor(timer / 10f);
+        float thirdNb = Mathf.Round(timer % 10f);
+
         Destroy(firstGame);
         Destroy(secondGame);
-        switch (firstNbS)
+        Destroy(thirdGame);
+        if (firstNb != 0)
+        {
+            switch (firstNb)
+            {
+                case 0:
+                    firstGame = Instantiate(n0, firstNumberObj.transform);
+                    break;
+                case 1:
+                    firstGame = Instantiate(n1, firstNumberObj.transform);
+                    break;
+                case 2:
+                    firstGame = Instantiate(n2, firstNumberObj.transform);
+                    break;
+                case 3:
+                    firstGame = Instantiate(n3, firstNumberObj.transform);
+                    break;
+                case 4:
+                    firstGame = Instantiate(n4, firstNumberObj.transform);
+                    break;
+                case 5:
+                    firstGame = Instantiate(n5, firstNumberObj.transform);
+                    break;
+                case 6:
+                    firstGame = Instantiate(n6, firstNumberObj.transform);
+                    break;
+                case 7:
+                    firstGame = Instantiate(n7, firstNumberObj.transform);
+                    break;
+                case 8:
+                    firstGame = Instantiate(n8, firstNumberObj.transform);
+                    break;
+                case 9:
+                    firstGame = Instantiate(n9, firstNumberObj.transform);
+                    break;
+                default:
+                    break;
+
+            }
+        }
+        if (secondNb != 0)
+        {
+            switch (secondNb)
+            {
+                case 0:
+                    secondGame = Instantiate(n0, secondNumberObj.transform);
+                    break;
+                case 1:
+                    secondGame = Instantiate(n1, secondNumberObj.transform);
+                    break;
+                case 2:
+                    secondGame = Instantiate(n2, secondNumberObj.transform);
+                    break;
+                case 3:
+                    secondGame = Instantiate(n3, secondNumberObj.transform);
+                    break;
+                case 4:
+                    secondGame = Instantiate(n4, secondNumberObj.transform);
+                    break;
+                case 5:
+                    secondGame = Instantiate(n5, secondNumberObj.transform);
+                    break;
+                case 6:
+                    secondGame = Instantiate(n6, secondNumberObj.transform);
+                    break;
+                case 7:
+                    secondGame = Instantiate(n7, secondNumberObj.transform);
+                    break;
+                case 8:
+                    secondGame = Instantiate(n8, secondNumberObj.transform);
+                    break;
+                case 9:
+                    secondGame = Instantiate(n9, secondNumberObj.transform);
+                    break;
+                default:
+                    break;
+
+            }
+        }
+        switch (thirdNb)
         {
             case 0:
-                firstGame = Instantiate(n0, firstNumberObj.transform);
+                thirdGame = Instantiate(n0, thirdNumberObj.transform);
                 break;
             case 1:
-                firstGame = Instantiate(n1, firstNumberObj.transform);
+                thirdGame = Instantiate(n1, thirdNumberObj.transform);
                 break;
             case 2:
-                firstGame = Instantiate(n2, firstNumberObj.transform);
+                thirdGame = Instantiate(n2, thirdNumberObj.transform);
                 break;
             case 3:
-                firstGame = Instantiate(n3, firstNumberObj.transform);
+                thirdGame = Instantiate(n3, thirdNumberObj.transform);
                 break;
             case 4:
-                firstGame = Instantiate(n4, firstNumberObj.transform);
+                thirdGame = Instantiate(n4, thirdNumberObj.transform);
                 break;
             case 5:
-                firstGame = Instantiate(n5, firstNumberObj.transform);
+                thirdGame = Instantiate(n5, thirdNumberObj.transform);
                 break;
             case 6:
-                firstGame = Instantiate(n6, firstNumberObj.transform);
+                thirdGame = Instantiate(n6, thirdNumberObj.transform);
                 break;
             case 7:
-                firstGame = Instantiate(n7, firstNumberObj.transform);
+                thirdGame = Instantiate(n7, thirdNumberObj.transform);
                 break;
             case 8:
-                firstGame = Instantiate(n8, firstNumberObj.transform);
+                thirdGame = Instantiate(n8, thirdNumberObj.transform);
                 break;
             case 9:
-                firstGame = Instantiate(n9, firstNumberObj.transform);
+                thirdGame = Instantiate(n9, thirdNumberObj.transform);
                 break;
             default:
                 break;
 
         }
-        switch (secondNbS)
-        {
-            case 0:
-                secondGame = Instantiate(n0, secondNumberObj.transform);
-                break;
-            case 1:
-                secondGame = Instantiate(n1, secondNumberObj.transform);
-                break;
-            case 2:
-                secondGame = Instantiate(n2, secondNumberObj.transform);
-                break;
-            case 3:
-                secondGame = Instantiate(n3, secondNumberObj.transform);
-                break;
-            case 4:
-                secondGame = Instantiate(n4, secondNumberObj.transform);
-                break;
-            case 5:
-                secondGame = Instantiate(n5, secondNumberObj.transform);
-                break;
-            case 6:
-                secondGame = Instantiate(n6, secondNumberObj.transform);
-                break;
-            case 7:
-                secondGame = Instantiate(n7, secondNumberObj.transform);
-                break;
-            case 8:
-                secondGame = Instantiate(n8, secondNumberObj.transform);
-                break;
-            case 9:
-                secondGame = Instantiate(n9, secondNumberObj.transform);
-                break;
-            default:
-                break;
+    
 
-        }
-    }
 
-    void intro()
+}
+
+void intro()
     {
         //play animation
     }

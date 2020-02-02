@@ -18,7 +18,7 @@ public class Vogel : MonoBehaviour
     void Start()
     {
         //moet nog aangepast worden naar positie speler
-        playerpos = new Vector3(0, 0.5f, 0);
+        playerpos = new Vector3(0, -0.5f, 0);
         rb = this.GetComponent<Rigidbody>();
 
         this.transform.LookAt(playerpos);

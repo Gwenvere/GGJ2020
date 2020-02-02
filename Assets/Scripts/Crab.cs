@@ -9,6 +9,9 @@ public class Crab : MonoBehaviour
     public float blockCarryHeight;
     public float despawnDistance;
 
+    public AudioClip[] sandPickupAudioClips;
+    AudioSource aus;
+
     Rigidbody rb;
 
     bool attack = true;
@@ -23,7 +26,10 @@ public class Crab : MonoBehaviour
         playerpos = new Vector3(0, 0, 0);
         rb = this.GetComponent<Rigidbody>();
         goal = GameObject.FindGameObjectWithTag("goal");
+        aus = this.GetComponent<AudioSource>();
+
     }
+
 
     void Update()
     {
@@ -57,6 +63,9 @@ public class Crab : MonoBehaviour
         if (other.collider.tag == "sandblock" && attack)
         {
             attack = false;
+
+            aus.clip = sandPickupAudioClips[Random.Range(0, sandPickupAudioClips.Length)];
+            aus.Play();
 
             other.collider.tag = "Untagged";
             other.transform.SetParent(this.transform);

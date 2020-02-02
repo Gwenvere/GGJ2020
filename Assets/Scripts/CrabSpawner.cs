@@ -28,7 +28,8 @@ public class CrabSpawner : MonoBehaviour
     {
         timer += Time.deltaTime;
         //Debug.Log("crabsPerSecond: " + crabsPerSecond + " slider value: " + crabSlider.value);
-        crabsPerSecond = crabSlider.value;
+        if (timer < 22) crabsPerSecond = 0.2f;
+        else crabsPerSecond = crabSlider.value;
         timePerCrab = 1 / crabsPerSecond;
         //crabSlider.GetComponent<Text>().text = "Crab slider value: " + crabsPerSecond;
         if (Time.time > previousSpawnTime + timePerCrab)
