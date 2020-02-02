@@ -22,7 +22,8 @@ public class RandomCubes : MonoBehaviour
     void Update()
     {
         //Debug.Log("CubeTimer: " + cubeTimer + " slider value: " + cubeSlider.value);
-        cubeTimer = cubeSlider.value;
+        if (timer < 22) cubeTimer = 2;
+        else cubeTimer = cubeSlider.value;
      //   cubeSlider.GetComponent<Text>().text = "Cube slider value: " + cubeTimer;
         timer += Time.deltaTime;
         if(timer > cubeTimer)

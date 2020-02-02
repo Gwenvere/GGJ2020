@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
             float secondNb = Mathf.Round(timer % 10f);
             setScore(firstNb, secondNb);
             
-            if (timer > 15f)
+            if (timer > 30f)
             {
                 GetComponent<BirdSpawner>().enabled = true;
             } 
