@@ -154,6 +154,9 @@ public class GameManager : MonoBehaviour
         gameOver.Play();
         fade = true;
         timerCounting = false;
+        rCubes.GetComponent<RandomCubes>().enabled = false;
+        this.GetComponent<CrabSpawner>().enabled = false;
+        GetComponent<BirdSpawner>().enabled = false;
         if (timer > highscore)
         {
             highscore = timer;
@@ -322,7 +325,9 @@ public class GameManager : MonoBehaviour
 
     public void playBtn()
     {
+
         buttonSound.Play();
+        instructions.gameObject.SetActive(false);
         introObj.SetActive(false);
         introPlaying = false;
         this.GetComponent<CrabSpawner>().enabled = true;
