@@ -47,7 +47,9 @@ public class GameManager : MonoBehaviour
 
     float introTimer;
     bool introPlaying;
-    public float introDuration = 10f;
+    public float introDuration = 30f;
+
+    public GameObject uiHelper;
     void Start()
     {
         rCubes.GetComponent<RandomCubes>().enabled = false;
@@ -60,7 +62,11 @@ public class GameManager : MonoBehaviour
         this.GetComponent<CrabSpawner>().enabled = false;
         introTimer = 0;
         introPlaying = true;
+
+        uiHelper.SetActive(false);
         intro();
+
+        
     }
 
     // Update is called once per frame
@@ -68,15 +74,16 @@ public class GameManager : MonoBehaviour
     {
         if (introPlaying)
         {
-            introTimer += Time.deltaTime;
-            if (introTimer > introDuration)
+            uiHelper.SetActive(true);
+            //introTimer += Time.deltaTime;
+            /*if (introTimer > introDuration)
             {
                 introObj.SetActive(false);
                 introPlaying = false;
                 this.GetComponent<CrabSpawner>().enabled = true;
                 timerCounting = true;
                 rCubes.GetComponent<RandomCubes>().enabled = true;
-            }
+            }*/
 
         }
         else if (timerCounting)
@@ -100,10 +107,21 @@ public class GameManager : MonoBehaviour
 
         if (OVRInput.GetDown(OVRInput.Button.Start))
         {
-            if (inMenu) canvas.gameObject.SetActive(false);
-            else canvas.gameObject.SetActive(true);
+            
+
+            if (inMenu)
+            {
+                canvas.gameObject.SetActive(false);
+                uiHelper.SetActive(false);
+            }
+            else
+            {
+                uiHelper.SetActive(true);
+                canvas.gameObject.SetActive(true);
+            }
             inMenu = !inMenu;
         }
+        
    
         if (fade)
         {
@@ -285,9 +303,43 @@ public class GameManager : MonoBehaviour
 
 }
 
-void intro()
+    void intro()
     {
         //play animation
+    }
+
+    public void menuBtn()
+    {
+        reloadLevel();
+    }
+
+    public void playBtn()
+    {
+        introObj.SetActive(false);
+        introPlaying = false;
+        this.GetComponent<CrabSpawner>().enabled = true;
+        timerCounting = true;
+        rCubes.GetComponent<RandomCubes>().enabled = true;
+        uiHelper.SetActive(false);
+    }
+    public void replayBtn()
+    {
+        reloadLevel();
+        /*
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        timerCounting = true;
+        introObj.SetActive(false);
+        introPlaying = false;
+        this.GetComponent<CrabSpawner>().enabled = true;
+        timerCounting = true;
+        rCubes.GetComponent<RandomCubes>().enabled = true;
+        uiHelper.SetActive(false);
+        */
+
+    }
+    public void settingsBtn()
+    {
+
     }
 }
 

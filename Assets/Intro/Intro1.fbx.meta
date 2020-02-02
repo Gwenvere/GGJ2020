@@ -1,0 +1,170 @@
+fileFormatVersion: 2
+guid: f348345fab43b854cac3dc05bcd5f49a
+ModelImporter:
+  serializedVersion: 26
+  internalIDToNameTable:
+  - first:
+      74: -604964325489689029
+    second: Cylinder.009|Cylinder.005Action
+  - first:
+      74: 8860473479103195021
+    second: Cylinder.009|Cylinder.008Action
+  - first:
+      74: 8908111264732835953
+    second: Cylinder.009|Cylinder.009Action
+  - first:
+      74: -1716225529665634742
+    second: Cylinder.009|Text.002Action
+  - first:
+      74: 5102175798666672119
+    second: Cylinder.009|Text.003Action
+  - first:
+      74: -3376762714180073498
+    second: Cylinder.008|Cylinder.005Action
+  - first:
+      74: -5184401270003880092
+    second: Cylinder.008|Cylinder.008Action
+  - first:
+      74: 7206978793933002168
+    second: Cylinder.008|Cylinder.009Action
+  - first:
+      74: -2143595360798714714
+    second: Cylinder.008|Text.002Action
+  - first:
+      74: 3137472850930854144
+    second: Cylinder.008|Text.003Action
+  - first:
+      74: 8263777003831402119
+    second: Cylinder.005|Cylinder.005Action
+  - first:
+      74: 4027548906024174447
+    second: Cylinder.005|Cylinder.008Action
+  - first:
+      74: 5324764151749677522
+    second: Cylinder.005|Cylinder.009Action
+  - first:
+      74: 2936463750415753637
+    second: Cylinder.005|Text.002Action
+  - first:
+      74: 3294093192881829153
+    second: Cylinder.005|Text.003Action
+  - first:
+      74: -1755808937682948042
+    second: Text.003|Cylinder.005Action
+  - first:
+      74: 8007190192696651311
+    second: Text.003|Cylinder.008Action
+  - first:
+      74: -4897172145690229227
+    second: Text.003|Cylinder.009Action
+  - first:
+      74: -111753400995395981
+    second: Text.003|Text.002Action
+  - first:
+      74: 2454416273148384345
+    second: Text.003|Text.003Action
+  - first:
+      74: -142951388179227112
+    second: Text.002|Cylinder.005Action
+  - first:
+      74: 575997096876225956
+    second: Text.002|Cylinder.008Action
+  - first:
+      74: -2553651472897343646
+    second: Text.002|Cylinder.009Action
+  - first:
+      74: -8478375338379672175
+    second: Text.002|Text.002Action
+  - first:
+      74: -6562310711486612855
+    second: Text.002|Text.003Action
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
